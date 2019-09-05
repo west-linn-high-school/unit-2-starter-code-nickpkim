@@ -12,8 +12,8 @@ public class Facts
         System.out.println("We present the fol\nlowing \\\\\\\\\\\\ facts for your "
                             + "extracurricular edification: \4");
         
-                            
-      
+                    
+                           
         System.out.println();
         
         double value = 0.7;
