@@ -2,8 +2,8 @@ import java.util.Scanner;
 public class FloatingPoints{
   public static void main(String[] args){
     Scanner scan = new Scanner(System.in);
-    double num1 = scan.nextDouble();
-    double num2 = scan.nextDouble();
+    int num1 = scan.nextInt();
+    int num2 = scan.nextInt();
 
     System.out.println(num1+" and "+num2);
 
