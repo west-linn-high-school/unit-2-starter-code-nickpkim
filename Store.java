@@ -4,7 +4,8 @@ import java.text.DecimalFormat;
 public class Store{
   public static void main(String[] args){
     Scanner scan = new Scanner(System.in);
-    DecimalFormat fmt = new DecimalFormat("0.##");
+    Random rand = new Random();
+    DecimalFormat fmt = new DecimalFormat("00.");
     //declaring all magic numbers
     final double PEANUT_PRICE = 1.72;
     final double BOOK_PRICE = 9.0;
@@ -18,19 +19,23 @@ public class Store{
     //welcome display
     System.out.println("Welcome to "+storeName);
 
+    //Ask for cahier name
+    System.out.println("Please enter your name");
+        String cashierName = scan.nextLine();
+
     //asking and recieving number of each item
     System.out.println("Please enter the number of books:");
         int bookNum = scan.nextInt();
     System.out.println("Please enter the number of movies:");
         int movieNum = scan.nextInt();
     System.out.println("Please enter the number of pounds of peanuts;");
-    double peanutNum = scan.nextDouble();
+      double peanutNum = scan.nextDouble();
 
     //Subtotals
     double bookSubtotal = bookNum*BOOK_PRICE;
     System.out.println("bookSub: "+bookSubtotal);
     double movieSubtotal = movieNum*MOVIE_PRICE;
-    System.out.println("movieSub: "+movieSubtotal);
+    System.out.println("movieSub: "+((double)Math.round(movieSubtotal*100))/100);
     double peanutSubtotal = peanutNum*PEANUT_PRICE;
     System.out.println("peanutSub: "+peanutSubtotal);
     double subtotal = ((double)Math.round((bookSubtotal+movieSubtotal+peanutSubtotal)*100))/100;
@@ -49,12 +54,40 @@ public class Store{
     double total = ((double)Math.round((subtotal+shipping+tax)*100))/100;
     System.out.println("total: "+total);
 
-    //making random variables
-    //int time =
+    //time o' day
+    int hour = (int)(Math.random()*24);
+    int minute = (int)(Math.random()*60);
+    System.out.println(hour);
+    System.out.println(minute);
+    String time = new String(hour+" : "+fmt.format(minute));
+    System.out.println(time);
+
+    //date
+    /*int monthNum = (int)(Math.random()*12);
+    if (monthNum == (1||3||5||7||8||10||12)){
+      month
+    }*/
 
     //Final Recipt
-    System.out.println("Thank you for Shopping at \n Steve's SuperStore");
+    System.out.println("Steve's SuperStore");
     System.out.println();
-
+    System.out.println("Helped By: "+cashierName);
+    System.out.println("-----------------------");
+    System.out.println("Item  Price");
+    System.out.println("Books "+bookSubtotal);
+    System.out.println("Peanuts "+peanutSubtotal);
+    System.out.println("Movies "+((double)Math.round(movieSubtotal*100))/100);
+    System.out.println("Subtotal: "+subtotal);
+    System.out.println("Shipping: "+shipping);
+    System.out.println("Taxes: "+tax);
+    System.out.println("Total: "+total);
+    System.out.println("-----------------------");
+    System.out.println("");
+    System.out.println("+++++++++++++++++++++++");
+    System.out.println(" Thank you shopping at ");
+    System.out.println("  Steve's SuperStore  ");
+    System.out.println("+++++++++++++++++++++++");
+    System.out.println("");
+    System.out.println("-----------------------");
   }
 }
