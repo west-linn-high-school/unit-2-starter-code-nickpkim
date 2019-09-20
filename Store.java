@@ -33,50 +33,60 @@ public class Store{
 
     //Subtotals
     double bookSubtotal = bookNum*BOOK_PRICE;
-    System.out.println("bookSub: "+bookSubtotal);
+    //System.out.println("bookSub: "+bookSubtotal);
     double movieSubtotal = movieNum*MOVIE_PRICE;
-    System.out.println("movieSub: "+((double)Math.round(movieSubtotal*100))/100);
+    //System.out.println("movieSub: "+((double)Math.round(movieSubtotal*100))/100);
     double peanutSubtotal = peanutNum*PEANUT_PRICE;
-    System.out.println("peanutSub: "+peanutSubtotal);
+    //System.out.println("peanutSub: "+peanutSubtotal);
     double subtotal = ((double)Math.round((bookSubtotal+movieSubtotal+peanutSubtotal)*100))/100;
-    System.out.println("Sub: "+subtotal);
+    //System.out.println("Sub: "+subtotal);
 
     //shipping cost
     double shipping = ((double)Math.round(((bookNum*BOOK_SHIPPING)+(movieSubtotal*MOVIE_SHIPPING)+
     (peanutNum*PEANUT_SHIPPING))*100))/100;
-    System.out.println("ship: "+shipping);
+    //System.out.println("ship: "+shipping);
 
     //sales tax
     double tax = ((double)Math.round((bookSubtotal+movieSubtotal)*SALES_TAX*100))/100;
-    System.out.println("tax: "+tax);
+    //System.out.println("tax: "+tax);
 
     //grand total
     double total = ((double)Math.round((subtotal+shipping+tax)*100))/100;
-    System.out.println("total: "+total);
+    //System.out.println("total: "+total);
 
     //time o' day
     int hour = (int)(Math.random()*24);
     int minute = (int)(Math.random()*60);
-    System.out.println(hour);
-    System.out.println(minute);
-    String time = new String(hour+" : "+fmt.format(minute));
-    System.out.println(time);
+    //System.out.println(hour);
+    //System.out.println(minute);
+    String time = new String(hour+":"+fmt.format(minute));
+    //System.out.println(time);
 
     //date
-    /*int monthNum = (int)(Math.random()*12);
-    if (monthNum == (1||3||5||7||8||10||12)){
-      month
-    }*/
+    int monthNum = (int)(Math.random()*12);
+    int dayNum;
+    if ((monthNum == 1)||(monthNum == 3)||(monthNum == 5)||(monthNum == 7)||
+    (monthNum == 8)||(monthNum == 10)||(monthNum == 12)){
+      dayNum = (int)(Math.random()*31+1);
+    } else if (monthNum == 2){
+      dayNum = (int)(Math.random()*28+1);
+    } else{
+      dayNum = (int)(Math.random()*30+1);
+    }
+    String date = new String(monthNum+"/"+dayNum+"/"+2019);
 
     //Final Recipt
+    System.out.println();
+    System.out.println();
     System.out.println("Steve's SuperStore");
     System.out.println();
+    System.out.println(date+" "+time);
     System.out.println("Helped By: "+cashierName);
     System.out.println("-----------------------");
     System.out.println("Item  Price");
-    System.out.println("Books "+bookSubtotal);
-    System.out.println("Peanuts "+peanutSubtotal);
-    System.out.println("Movies "+((double)Math.round(movieSubtotal*100))/100);
+    System.out.println("Books: "+bookSubtotal);
+    System.out.println("Peanuts: "+peanutSubtotal);
+    System.out.println("Movies: "+((double)Math.round(movieSubtotal*100))/100);
     System.out.println("Subtotal: "+subtotal);
     System.out.println("Shipping: "+shipping);
     System.out.println("Taxes: "+tax);
