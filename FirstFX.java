@@ -67,9 +67,12 @@ public class FirstFX extends Application {
     Ellipse fingy3 = new Ellipse(75,105,10,5);
     fingy3.setStroke(Color.YELLOW);
     fingy3.setFill(Color.YELLOW);
+    Ellipse fingy4 = new Ellipse(85,88,5,20);
+    fingy4.setStroke(Color.YELLOW);
+    fingy4.setFill(Color.YELLOW);
 
     Group root = new Group(yes, border, face, sungl, asses, frame, frame2,
-    frame3, upperLip, lowerLip, fingy, fingy2, fingy3);
+    frame3, upperLip, lowerLip, fingy, fingy2, fingy3, fingy4);
     Scene scene = new Scene(root, 300, 120, Color.LIGHTBLUE);
     stage.setTitle("FirstFX");
     stage.setScene(scene);
